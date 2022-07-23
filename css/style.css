@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&display=swap');
+
+html{
+    display:flex;
+    font-family: 'Mulish', sans-serif;
+    justify-content: center;
+    background: #f1f3f9;
+    height:100vh;
+    align-items: center;
+}
+.profile img{
+    width:150px;
+    filter:drop-shadow(16px 16px 10px rgb(0 0 0 / 10%));
+}
+p{
+    margin:5px;
+    padding:3px;
+}
+.container{
+    width:600px;
+    height:200px;
+    align-items: center;
+    display:flex;
+    background: #fff;
+    justify-content: space-between;
+    border-radius:25px;
+    box-shadow:rgba(0,0,0,0.1) 0px 20px 25px -5px, rgba(0,0,0,0.04) 0px 10px 10px -5px;
+}
+.button-wrap, .icon-wrap, .icon-message, .notification, .notification .text-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-wrap{
+    width:120px;
+    height:120px;
+    background: #fff;
+    border-radius: 25%;
+    box-shadow: 0 3px 20px -3px #d5dbed;
+    position: relative;
+    margin:10px;
+    cursor:pointer;
+}
+.icon-message-wrap, .icon-message{
+    width:70.5882352941px;
+    height:70.5882352941px;
+    background: transparent;
+    position: relative;
+}
+.icon-message{
+    background: #40e51c;
+    border-radius:50%;
+    position: absolute;
+    z-index: 2;
+}
+.dots{
+    display: flex;
+    justify-content: space-evenly;
+    width:90%;
+}
+.dot{
+    width:8px;
+    height:18px;
+    border-radius:88% 10% 95% 10%;
+    background: #fff;
+}
+.dot-typing{
+    animation:typing 878.9ms ease-in-out 4;
+}
+.dot-typing{
+    animation:typing-icon 878.9ms ease-in-out 3 878.9ms;
+}
+.dot-1{
+    animation-delay:122.9230769231ms;
+}
+.dot-2{
+    animation-delay:245.8461538462ms;
+}
+.dot-3{
+    animation-delay:368.7692307692ms;
+}
+@keyframes typing{
+    0%{
+      transform:translateY(0);
+    }
+    50%{
+      transform: translateY(-6px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+}
+@keyframes typing-icon{
+    0%{
+        transform:translateY(0);
+      }
+    50%{
+        transform: translateY(6px);
+      }
+    100%{
+        transform: translateY(0);
+    }
+}
+.tail-icon{
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position:absolute;
+    height:100px;
+    width:40px;
+    bottom: 0;
+}
+.arrow-left{
+    width:30px;
+    height:30px;
+    background: #40e51c;
+    transform: skewX(-35deg) skewX(-30deg) rotate(45deg) translate(-12px, -0.5px);
+    border-radius:5px;
+}
+.notification{
+    width:0;
+    height:0;
+    background: #ffc107;
+    border-radius: 17px;
+    position: absolute;
+    bottom:calc(100% - calc(72.307692px/5));
+    right:-37.461538px;
+    overflow:hidden;
+    flex-wrap:nowrap;
+    box-shadow: 0 3px 20px -4px #ffc107;
+    box-sizing: border-box;
+    border: 6px solid #ffc107;
+    opacity:0;
+}
+.notification .text-wrap{
+    width:400px;
+    height:33.6px;
+    overflow:hidden;
+    position:absolute;
+}
+.text{
+    transform:translateX(180px);
+    position:absolute;
+    width:auto;
+    color:#fff;
+}
+.notify-in{
+    animation: notifEx 499ms cubic-bezier(0.63,0.01,0.26,1)forwards, notif 499ms cubic-bezier(0.63,0.01,0.26,1) forwards 799ms;
+}
+.text-act{
+    animation:notifMsg 7s linear infinite;
+}
+@keyframes notif{
+    0%{
+        width:33.6px;
+        height:33.6px;
+        opacity:1;
+    }
+    100%{
+        width:120.6px;
+        height:42.6px;
+        opacity:1;
+    }
+}
+@keyframes notifEx{
+    0%{
+        width:0;
+        height:0;
+        opacity:0;
+    }
+    5%{
+        opacity:1;
+    }
+    100%{
+        width:33.6px;
+        height:33.6px;
+        opacity:1;
+    }
+}
+@keyframes notifMsg{
+    0%{
+        transform: translateX(180px);
+    }
+    100%{
+        transform: translateX(-190px);
+    }
+}
+.profile-content{
+    display:flex;
+    z-index:999;
+    align-items: center;
+    justify-content: center;
+}
+.profile-content a{
+    border-radius:10%;
+    text-decoration: none;
+    font-weight:bold;
+    font-size:14px;
+    background-color: rgba(1,155,229,.08);
+    padding:6px 19px;
+    color:#266dd3;
+}
